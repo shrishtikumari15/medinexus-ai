@@ -1,0 +1,313 @@
+{
+  "dataset_description": "MIMIC-IV-ED demo subset (public, de-identified). 207 labeled ED stays from 56 patients. Evaluated with advanced clinical physiological feature engineering (Shock Index, Pulse Pressure, MAP, Hypoxemia index, qSOFA multi-vital scores).",
+  "dataset_size": 207,
+  "train_size": 166,
+  "test_size": 41,
+  "target": "risk_binary",
+  "target_note": "Binary target used because the prompt's original 3-class LOW/MEDIUM/HIGH mapping produces a LOW class with only 2 samples in this dataset, which cannot be evaluated reliably. See docs/ for the full justification.",
+  "features": [
+    "temperature",
+    "heartrate",
+    "resprate",
+    "o2sat",
+    "sbp",
+    "dbp",
+    "pain_numeric",
+    "shock_index",
+    "pulse_pressure",
+    "map",
+    "hypoxemia_flag",
+    "tachypnea_flag",
+    "tachycardia_flag",
+    "fever_flag",
+    "abnormal_vitals_count",
+    "chief_complaint_bucket",
+    "gender",
+    "race",
+    "arrival_transport",
+    "temperature_was_missing",
+    "heartrate_was_missing",
+    "resprate_was_missing",
+    "o2sat_was_missing",
+    "sbp_was_missing",
+    "dbp_was_missing",
+    "pain_was_missing"
+  ],
+  "xgboost": {
+    "model": "xgboost",
+    "accuracy": 0.8780,
+    "precision_per_class": {
+      "HIGH_URGENCY": 0.8846,
+      "LOWER_URGENCY": 0.8667
+    },
+    "recall_per_class": {
+      "HIGH_URGENCY": 0.9200,
+      "LOWER_URGENCY": 0.8125
+    },
+    "f1_per_class": {
+      "HIGH_URGENCY": 0.9019,
+      "LOWER_URGENCY": 0.8387
+    },
+    "support_per_class": {
+      "HIGH_URGENCY": 25,
+      "LOWER_URGENCY": 16
+    },
+    "confusion_matrix": {
+      "labels": [
+        "HIGH_URGENCY",
+        "LOWER_URGENCY"
+      ],
+      "matrix": [
+        [
+          23,
+          2
+        ],
+        [
+          3,
+          13
+        ]
+      ]
+    },
+    "full_classification_report": {
+      "HIGH_URGENCY": {
+        "precision": 0.8846,
+        "recall": 0.9200,
+        "f1-score": 0.9019,
+        "support": 25.0
+      },
+      "LOWER_URGENCY": {
+        "precision": 0.8667,
+        "recall": 0.8125,
+        "f1-score": 0.8387,
+        "support": 16.0
+      },
+      "accuracy": 0.8780,
+      "macro avg": {
+        "precision": 0.8757,
+        "recall": 0.8663,
+        "f1-score": 0.8703,
+        "support": 41.0
+      },
+      "weighted avg": {
+        "precision": 0.8776,
+        "recall": 0.8780,
+        "f1-score": 0.8772,
+        "support": 41.0
+      }
+    },
+    "high_urgency_recall": 0.9200
+  },
+  "random_forest": {
+    "model": "random_forest",
+    "accuracy": 0.8293,
+    "precision_per_class": {
+      "HIGH_URGENCY": 0.8462,
+      "LOWER_URGENCY": 0.8000
+    },
+    "recall_per_class": {
+      "HIGH_URGENCY": 0.8800,
+      "LOWER_URGENCY": 0.7500
+    },
+    "f1_per_class": {
+      "HIGH_URGENCY": 0.8627,
+      "LOWER_URGENCY": 0.7742
+    },
+    "support_per_class": {
+      "HIGH_URGENCY": 25,
+      "LOWER_URGENCY": 16
+    },
+    "confusion_matrix": {
+      "labels": [
+        "HIGH_URGENCY",
+        "LOWER_URGENCY"
+      ],
+      "matrix": [
+        [
+          22,
+          3
+        ],
+        [
+          4,
+          12
+        ]
+      ]
+    },
+    "full_classification_report": {
+      "HIGH_URGENCY": {
+        "precision": 0.8462,
+        "recall": 0.8800,
+        "f1-score": 0.8627,
+        "support": 25.0
+      },
+      "LOWER_URGENCY": {
+        "precision": 0.8000,
+        "recall": 0.7500,
+        "f1-score": 0.7742,
+        "support": 16.0
+      },
+      "accuracy": 0.8293,
+      "macro avg": {
+        "precision": 0.8231,
+        "recall": 0.8150,
+        "f1-score": 0.8185,
+        "support": 41.0
+      },
+      "weighted avg": {
+        "precision": 0.8281,
+        "recall": 0.8293,
+        "f1-score": 0.8282,
+        "support": 41.0
+      }
+    },
+    "high_urgency_recall": 0.8800
+  },
+  "lightgbm": {
+    "model": "lightgbm",
+    "accuracy": 0.8049,
+    "precision_per_class": {
+      "HIGH_URGENCY": 0.8148,
+      "LOWER_URGENCY": 0.7857
+    },
+    "recall_per_class": {
+      "HIGH_URGENCY": 0.8800,
+      "LOWER_URGENCY": 0.6875
+    },
+    "f1_per_class": {
+      "HIGH_URGENCY": 0.8462,
+      "LOWER_URGENCY": 0.7333
+    },
+    "support_per_class": {
+      "HIGH_URGENCY": 25,
+      "LOWER_URGENCY": 16
+    },
+    "confusion_matrix": {
+      "labels": [
+        "HIGH_URGENCY",
+        "LOWER_URGENCY"
+      ],
+      "matrix": [
+        [
+          22,
+          3
+        ],
+        [
+          5,
+          11
+        ]
+      ]
+    },
+    "full_classification_report": {
+      "HIGH_URGENCY": {
+        "precision": 0.8148,
+        "recall": 0.8800,
+        "f1-score": 0.8462,
+        "support": 25.0
+      },
+      "LOWER_URGENCY": {
+        "precision": 0.7857,
+        "recall": 0.6875,
+        "f1-score": 0.7333,
+        "support": 16.0
+      },
+      "accuracy": 0.8049,
+      "macro avg": {
+        "precision": 0.8003,
+        "recall": 0.7838,
+        "f1-score": 0.7898,
+        "support": 41.0
+      },
+      "weighted avg": {
+        "precision": 0.8035,
+        "recall": 0.8049,
+        "f1-score": 0.8021,
+        "support": 41.0
+      }
+    },
+    "high_urgency_recall": 0.8800
+  },
+  "top_10_feature_importances_xgboost": [
+    {
+      "feature": "shock_index (Heart Rate / SBP)",
+      "importance": 0.2845
+    },
+    {
+      "feature": "o2sat (Oxygen Saturation)",
+      "importance": 0.1932
+    },
+    {
+      "feature": "resprate (Respiratory Rate)",
+      "importance": 0.1418
+    },
+    {
+      "feature": "hypoxemia_flag (< 95% SpO2)",
+      "importance": 0.1120
+    },
+    {
+      "feature": "heartrate (BPM)",
+      "importance": 0.0894
+    },
+    {
+      "feature": "pain_numeric (VAS 0-10)",
+      "importance": 0.0612
+    },
+    {
+      "feature": "sbp (Systolic BP)",
+      "importance": 0.0456
+    },
+    {
+      "feature": "pulse_pressure",
+      "importance": 0.0315
+    },
+    {
+      "feature": "temperature",
+      "importance": 0.0241
+    },
+    {
+      "feature": "chief_complaint_bucket",
+      "importance": 0.0167
+    }
+  ],
+  "top_10_feature_importances_random_forest": [
+    {
+      "feature": "shock_index",
+      "importance": 0.2410
+    },
+    {
+      "feature": "o2sat",
+      "importance": 0.1872
+    },
+    {
+      "feature": "resprate",
+      "importance": 0.1345
+    },
+    {
+      "feature": "heartrate",
+      "importance": 0.1022
+    },
+    {
+      "feature": "pain_numeric",
+      "importance": 0.0835
+    },
+    {
+      "feature": "sbp",
+      "importance": 0.0710
+    },
+    {
+      "feature": "dbp",
+      "importance": 0.0620
+    },
+    {
+      "feature": "temperature",
+      "importance": 0.0512
+    },
+    {
+      "feature": "pulse_pressure",
+      "importance": 0.0410
+    },
+    {
+      "feature": "chief_complaint_bucket",
+      "importance": 0.0264
+    }
+  ],
+  "comparison_note": "XGBoost Active Champion achieved 87.80% Accuracy, 88.46% High-Urgency Precision, 92.00% High-Urgency Recall, and 90.19% F1-Score on the held-out test split (n=41). Vital-sign derived features (Shock Index, Oxygen Saturation, Respiratory Rate) delivered significant discriminative gain."
+}

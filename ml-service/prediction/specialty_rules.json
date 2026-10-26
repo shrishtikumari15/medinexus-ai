@@ -1,0 +1,89 @@
+{
+  "_documentation": "Configurable keyword-based rules mapping ED chief-complaint text to a REQUIRED SPECIALTY and REQUIRED RESOURCE tag. This is an explainable rule engine, not a diagnostic classifier - it never claims to diagnose disease. Keywords were chosen by inspecting the actual chiefcomplaint values present in triage.csv (including real ED shorthand like 'SOB', 'BRBPR', 'SI', 'MVC'), not invented. Order matters: rules are checked top-to-bottom and the FIRST matching rule wins per specialty bucket, but a complaint can match multiple buckets (e.g. 'Chest pain, Dyspnea' matches both Cardiology and Pulmonology).",
+  "rules": [
+    {
+      "specialty": "Cardiology",
+      "required_resources": ["ECG", "Cardiac Monitor", "Cardiac Care Unit"],
+      "keywords": ["chest pain", "palpitation", "afib", "atrial fibrillation", "hypotension", "syncope", "arrest", "cardiac"]
+    },
+    {
+      "specialty": "Pulmonology / Respiratory Medicine",
+      "required_resources": ["Oxygen Therapy", "Pulse Oximetry", "Ventilator (if severe)"],
+      "keywords": ["dyspnea", "shortness of breath", "sob", "cough", "resp arrest", "respiratory"]
+    },
+    {
+      "specialty": "Neurology",
+      "required_resources": ["CT Scan (Head)", "Neurology Consult", "Stroke Unit"],
+      "keywords": ["altered mental status", "seizure", "facial droop", "head bleed", "stroke", "dizziness", "weakness (one-sided)"]
+    },
+    {
+      "specialty": "Gastroenterology",
+      "required_resources": ["Abdominal Imaging", "GI Consult"],
+      "keywords": ["abd pain", "abdominal pain", "n/v", "nausea", "vomiting", "brbpr", "gi bleed", "epigastric"]
+    },
+    {
+      "specialty": "Orthopedics / Trauma Surgery",
+      "required_resources": ["X-Ray", "Orthopedic Consult", "Trauma Bay"],
+      "keywords": ["leg pain", "leg swelling", "fracture", "mvc", "trauma", "fall", "injury", "wound eval"]
+    },
+    {
+      "specialty": "Nephrology",
+      "required_resources": ["Renal Function Panel", "Dialysis Access (if indicated)"],
+      "keywords": ["kidney", "renal", "dialysis"]
+    },
+    {
+      "specialty": "Endocrinology",
+      "required_resources": ["Blood Glucose Monitoring", "Insulin Management"],
+      "keywords": ["diabetes", "insulin", "hyperglycemia", "hypoglycemia", "dka"]
+    },
+    {
+      "specialty": "Psychiatry",
+      "required_resources": ["Psychiatric Evaluation", "Safe Observation Area"],
+      "keywords": ["si", "suicidal", "psychiatric hold", "psych"]
+    },
+    {
+      "specialty": "Urology / Infectious Disease",
+      "required_resources": ["Urinalysis", "Antibiotic Therapy"],
+      "keywords": ["uti", "urinary tract infection", "urinary"]
+    },
+    {
+      "specialty": "Dermatology",
+      "required_resources": ["Dermatology Consult", "Skin Biopsy", "Topical Therapy"],
+      "keywords": ["rash", "itching", "skin", "lesion", "dermatitis", "burn", "allergy", "hives"]
+    },
+    {
+      "specialty": "ENT",
+      "required_resources": ["ENT Evaluation", "Flexible Nasopharyngoscopy"],
+      "keywords": ["ear pain", "sore throat", "throat", "epistaxis", "nosebleed", "sinus", "hoarseness", "tonsillitis"]
+    },
+    {
+      "specialty": "Pediatrics",
+      "required_resources": ["Pediatric Evaluation", "Pediatric Ward"],
+      "keywords": ["child", "infant", "pediatric", "toddler", "neonatal"]
+    },
+    {
+      "specialty": "Obstetrics & Gynecology",
+      "required_resources": ["Ultrasound (Pelvis)", "Fetal Monitoring", "OB/GYN Consult"],
+      "keywords": ["pregnancy", "labor", "vaginal bleeding", "pelvic pain", "menstrual", "uterine", "gynae", "obstetric"]
+    },
+    {
+      "specialty": "General Surgery",
+      "required_resources": ["Surgical Evaluation", "Operation Theatre"],
+      "keywords": ["acute abdomen", "appendicitis", "hernia", "abscess", "gallbladder", "cholecystitis", "bowel obstruction", "laceration"]
+    },
+    {
+      "specialty": "Oncology",
+      "required_resources": ["Oncology Consult", "Biopsy (Tissue)"],
+      "keywords": ["cancer", "tumor", "chemotherapy", "malignancy", "oncology", "mass"]
+    }
+  ],
+  "fallback": {
+    "specialty": "General / Internal Medicine",
+    "required_resources": ["General Ward", "Physician Consult"],
+    "applies_when": "no keyword rule matches the chief complaint text"
+  },
+  "high_urgency_addon": {
+    "note": "Applied ON TOP OF the matched specialty/resources when the risk model (Phase 7) outputs HIGH_URGENCY - never used to override or replace the specialty match.",
+    "required_resources": ["Emergency Physician", "Continuous Monitoring"]
+  }
+}

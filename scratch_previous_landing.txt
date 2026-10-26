@@ -1,0 +1,108 @@
+Created At: 2026-10-07T21:48:18+05:30
+Completed At: 2026-10-07T21:48:19+05:30
+File Path: `file:///c:/Users/Shrishti%20kumari/OneDrive/Desktop/medinexus-ai/frontend/src/pages/Landing.jsx`
+Total Lines: 111
+Total Bytes: 6718
+Showing lines 1 to 100
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: import React, { useState } from 'react';
+2: import { useNavigate } from 'react-router-dom';
+3: 
+4: const popularSpecialties = ['Cardiology', 'Neurology', 'Orthopedics', 'Oncology'];
+5: 
+6: export default function Landing() {
+7:   const navigate = useNavigate();
+8:   const [hospital, setHospital] = useState('');
+9:   const [location, setLocation] = useState('');
+10:   const [specialty, setSpecialty] = useState('');
+11: 
+12:   function submitSearch(event) {
+13:     event.preventDefault();
+14:     const params = new URLSearchParams();
+15:     if (hospital.trim()) params.set('q', hospital.trim());
+16:     if (location.trim()) params.set('state', location.trim());
+17:     if (specialty.trim()) params.set('specialty', specialty.trim());
+18:     navigate(`/hospitals${params.size ? `?${params.toString()}` : ''}`);
+19:   }
+20: 
+21:   function searchSpecialty(value) {
+22:     navigate(`/hospitals?specialty=${encodeURIComponent(value)}`);
+23:   }
+24: 
+25:   return (
+26:     <main>
+27:       <section className="relative isolate min-h-[590px] overflow-hidden bg-[#183f3b] text-white md:min-h-[640px]">
+28:         <div
+29:           className="absolute inset-0 -z-20 bg-cover bg-center"
+30:           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=2200&q=85')" }}
+31:           role="img"
+32:           aria-label="A bright, modern hospital interior"
+33:         />
+34:         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#102c2a]/95 via-[#153b37]/80 to-[#102c2a]/25" />
+35:         <div className="mx-auto flex min-h-[590px] max-w-7xl flex-col justify-center px-5 py-16 md:min-h-[640px] md:px-10 lg:px-16">
+36:           <div className="max-w-3xl">
+37:             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-[#b8ddd4]">Care, made easier to navigate</p>
+38:             <h1 className="max-w-2xl font-display text-4xl font-semibold leading-[1.12] md:text-6xl">
+39:               Find a hospital that fits your care.
+40:             </h1>
+41:             <p className="mt-5 max-w-xl text-base leading-7 text-white/85 md:text-lg">
+42:               Explore hospitals by name, location, and specialty. Review services, verified doctor profiles, and contact details before you visit.
+43:             </p>
+44:           </div>
+45: 
+46:           <form onSubmit={submitSearch} className="mt-9 grid max-w-5xl gap-2 bg-white p-2 text-ink shadow-2xl md:grid-cols-[1.25fr_0.9fr_0.9fr_auto]">
+47:             <label className="min-w-0 border-b border-slate-200 px-3 py-2 md:border-b-0 md:border-r">
+48:               <span className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">Hospital</span>
+49:               <input value={hospital} onChange={(event) => setHospital(event.target.value)} placeholder="Hospital name" className="mt-1 w-full border-0 bg-transparent p-0 text-sm outline-none placeholder:text-slate-400 focus:ring-0" />
+50:             </label>
+51:             <label className="min-w-0 border-b border-slate-200 px-3 py-2 md:border-b-0 md:border-r">
+52:               <span className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">Location</span>
+53:               <input value={location} onChange={(event) => setLocation(event.target.value)} placeholder="City or state" className="mt-1 w-full border-0 bg-transparent p-0 text-sm outline-none placeholder:text-slate-400 focus:ring-0" />
+54:             </label>
+55:             <label className="min-w-0 px-3 py-2">
+56:               <span className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">Specialty</span>
+57:               <input value={specialty} onChange={(event) => setSpecialty(event.target.value)} placeholder="e.g. cardiology" className="mt-1 w-full border-0 bg-transparent p-0 text-sm outline-none placeholder:text-slate-400 focus:ring-0" />
+58:             </label>
+59:             <button type="submit" className="min-h-12 bg-[#a54836] px-7 text-sm font-semibold text-white transition hover:bg-[#883c2e]">
+60:               Search hospitals
+61:             </button>
+62:           </form>
+63: 
+64:           <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-white/80">
+65:             <span className="font-medium text-white">Explore care:</span>
+66:             {popularSpecialties.map((item) => (
+67:               <button key={item} type="button" onClick={() => searchSpecialty(item)} className="border-b border-white/40 pb-0.5 transition hover:border-white hover:text-white">
+68:                 {item}
+69:               </button>
+70:             ))}
+71:           </div>
+72:         </div>
+73:       </section>
+74: 
+75:       <section className="border-b border-slate-200 bg-white">
+76:         <div className="mx-auto grid max-w-7xl gap-6 px-5 py-8 sm:grid-cols-3 md:px-10 lg:px-16">
+77:           <div>
+78:             <p className="text-sm font-semibold text-[#174c46]">Hospital directory</p>
+79:             <p className="mt-1 text-sm leading-6 text-slate-600">Search a broad directory by hospital, area, and care specialty.</p>
+80:           </div>
+81:           <div>
+82:             <p className="text-sm font-semibold text-[#174c46]">Doctor information</p>
+83:             <p className="mt-1 text-sm leading-6 text-slate-600">See approved profiles when doctors are linked to a hospital.</p>
+84:           </div>
+85:           <div>
+86:             <p className="text-sm font-semibold text-[#174c46]">Official sources</p>
+87:             <p className="mt-1 text-sm leading-6 text-slate-600">Open hospital websites and confirm current departments directly.</p>
+88:           </div>
+89:         </div>
+90:       </section>
+91: 
+92:       <section className="mx-auto max-w-7xl px-5 py-12 md:px-10 lg:px-16">
+93:         <div className="flex flex-wrap items-end justify-between gap-4">
+94:           <div>
+95:             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#a54836]">Start with a specialty</p>
+96:             <h2 className="mt-2 text-2xl font-semibold text-[#183f3b]">Explore common services</h2>
+97:           </div>
+98:           <button type="button" onClick={() => navigate('/hospitals')} className="text-sm font-semibold text-[#174c46] hover:underline">Browse all hospitals →</button>
+99:         </div>
+100:         <div className="mt-6 grid grid-cols-2 border-l border-t border-slate-200 sm:grid-cols-4">
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

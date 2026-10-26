@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg-soft: #f0f5f3;
+  --panel: #ffffff;
+  --line: rgba(15, 67, 62, 0.14);
+  --shadow-soft: 0 12px 32px rgba(17, 57, 53, 0.07);
+  --shadow-hover: 0 18px 38px rgba(17, 57, 53, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-surface text-ink antialiased;
+  background-color: #f4f7f5;
+  background-image: radial-gradient(rgba(31, 110, 102, 0.07) 0.7px, transparent 0.7px);
+  background-size: 22px 22px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: #cde5df;
+  color: #0f433e;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(31, 110, 102, 0.35);
+  outline-offset: 2px;
+}
+
+@layer components {
+  .health-card {
+    @apply rounded-lg border border-clinical-100 bg-white shadow-[var(--shadow-soft)];
+  }
+
+  .health-badge {
+    @apply inline-flex items-center rounded-full border border-clinical-100 bg-clinical-50 px-2.5 py-1 text-[11px] font-medium tracking-wide text-clinical-700 uppercase;
+  }
+
+  .primary-btn {
+    @apply inline-flex min-h-10 items-center justify-center rounded-lg bg-clinical-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-clinical-700/15 transition hover:-translate-y-px hover:bg-clinical-600 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .secondary-btn {
+    @apply inline-flex min-h-10 items-center justify-center rounded-lg border border-clinical-200 bg-white px-5 py-2.5 text-sm font-semibold text-clinical-700 transition hover:border-clinical-400 hover:bg-clinical-50;
+  }
+
+  .soft-chip {
+    @apply inline-flex items-center rounded-full bg-clinical-50 px-2.5 py-1 text-xs font-medium text-clinical-700;
+  }
+
+  .panel-shell {
+    @apply mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10;
+  }
+
+  .panel-header {
+    @apply mb-7 flex flex-col gap-4 border-b border-clinical-100 pb-6 sm:flex-row sm:items-end sm:justify-between;
+  }
+
+  .panel-eyebrow {
+    @apply text-xs font-semibold uppercase text-clinical-600;
+  }
+
+  .panel-title {
+    @apply mt-2 text-2xl font-bold text-clinical-700 sm:text-3xl;
+  }
+
+  .panel-subtitle {
+    @apply mt-2 max-w-2xl text-sm leading-relaxed text-ink/60;
+  }
+
+  .panel-link-card {
+    @apply block rounded-lg border border-clinical-100 bg-white p-5 shadow-[var(--shadow-soft)] transition duration-200 hover:-translate-y-0.5 hover:border-clinical-300 hover:shadow-[var(--shadow-hover)];
+  }
+}
+
+input:not([type='checkbox']):not([type='radio']):not([type='file']),
+select,
+textarea {
+  border-radius: 8px;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+input:not([type='checkbox']):not([type='radio']):not([type='file']):focus,
+select:focus,
+textarea:focus {
+  border-color: #3e8e86;
+  box-shadow: 0 0 0 3px rgba(62, 142, 134, 0.12);
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

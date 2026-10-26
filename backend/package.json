@@ -1,0 +1,41 @@
+{
+  "name": "medinexus-backend",
+  "version": "0.1.0",
+  "description": "MediNexus AI - Node.js/Express backend API",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --runInBand",
+    "lint": "eslint src",
+    "import:scraped": "node src/scripts/importScrapedDoctors.js",
+    "seed:apollo": "node src/scripts/seedApolloHospitalsAndDoctors.js",
+    "verify:apollo": "node src/scripts/verifyApolloData.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "csv-parse": "^7.0.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.7.0",
+    "express-validator": "^7.1.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.0",
+    "morgan": "^1.10.0",
+    "multer": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^11.2.0",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

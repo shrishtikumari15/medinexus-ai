@@ -1,0 +1,83 @@
+Created At: 2026-10-07T22:34:09+05:30
+Completed At: 2026-10-07T22:34:11+05:30
+
+The command exited with code 0.
+Output:
+<truncated 1 lines>
+and urgency to identify critical care requirements.\n              </p>\n              <div className=\"mt-4 
+text-[11px] font-semibold text-clinical-600\">\n                Random Forest &amp; LightGBM \n              </div>\n 
+           </article>\n\n            {/* Pillar 2 */}\n            <article className=\"rounded-2xl border 
+border-slate-200 bg-slate-50/50 p-6 transition hover:border-clinical-300 hover:bg-white hover:shadow-lg\">\n           
+   <div className=\"flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 font-bold 
+text-xl\">\n                ?\n              </div>\n              <h3 className=\"mt-4 text-lg font-bold 
+text-ink\">Waiting-Time Estimation</h3>\n              <p className=\"mt-2 text-xs leading-relaxed text-slate-600\">\n 
+               Validated XGBoost regression model estimates consultation and triage waiting times using empirical 
+operational hospital queue data.\n              </p>\n              <div className=\"mt-4 text-[11px] font-semibold 
+text-clinical-600\">\n                MAE 3.22m � R� 0.968 \n              </div>\n            </article>\n\n         
+   {/* Pillar 3 */}\n            <article className=\"rounded-2xl border border-slate-200 bg-slate-50/50 p-6 
+transition hover:border-clinical-300 hover:bg-white hover:shadow-lg\">\n              <div className=\"flex h-12 w-12 
+items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 font-bold text-xl\">\n                ???\n     
+         </div>\n              <h3 className=\"mt-4 text-lg font-bold text-ink\">Capacity &amp; Bed 
+Truthfulness</h3>\n              <p className=\"mt-2 text-xs leading-relaxed text-slate-600\">\n                Strict 
+separation between total directory beds, reported available beds, and operational simulation models. No fabricated 
+availability figures.\n              </p>\n              <div className=\"mt-4 text-[11px] font-semibold 
+text-clinical-600\">\n                4-Metric Transparency \n              </div>\n            </article>\n\n        
+    {/* Pillar 4 */}\n            <article className=\"rounded-2xl border border-slate-200 bg-slate-50/50 p-6 
+transition hover:border-clinical-300 hover:bg-white hover:shadow-lg\">\n              <div className=\"flex h-12 w-12 
+items-center justify-center rounded-xl bg-cyan-100 text-cyan-700 font-bold text-xl\">\n                ?????\n         
+     </div>\n              <h3 className=\"mt-4 text-lg font-bold text-ink\">Verified Specialists Only</h3>\n          
+    <p className=\"mt-2 text-xs leading-relaxed text-slate-600\">\n                Zero synthetic doctors. 100% of 
+verified profiles are audited against official hospital web directories and public medical council registers.\n        
+      </p>\n              <div className=\"mt-4 text-[11px] font-semibold text-clinical-600\">\n                Level 
+1 Hospital Source Verified \n              </div>\n            </article>\n          </div>\n        </div>\n      
+</section>\n\n      {/* Statistics Banner */}\n      <section className=\"bg-clinical-800 text-white py-14\">\n        
+<div className=\"mx-auto max-w-7xl px-5 sm:px-8 lg:px-12\">\n          <div className=\"grid grid-cols-2 gap-8 
+text-center sm:grid-cols-4\">\n            <div>\n              <p className=\"text-3xl font-extrabold sm:text-4xl 
+text-emerald-400\">30,270+</p>\n              <p className=\"mt-1 text-xs font-semibold uppercase tracking-wider 
+text-slate-300\">Registered Hospitals</p>\n            </div>\n            <div>\n              <p 
+className=\"text-3xl font-extrabold sm:text-4xl text-emerald-400\">36</p>\n              <p className=\"mt-1 text-xs 
+font-semibold uppercase tracking-wider text-slate-300\">States &amp; Territories</p>\n            </div>\n            
+<div>\n              <p className=\"text-3xl font-extrabold sm:text-4xl text-emerald-400\">10,000</p>\n              
+<p className=\"mt-1 text-xs font-semibold uppercase tracking-wider text-slate-300\">Hourly Flow Records</p>\n          
+  </div>\n            <div>\n              <p className=\"text-3xl font-extrabold sm:text-4xl 
+text-emerald-400\">100%</p>\n              <p className=\"mt-1 text-xs font-semibold uppercase tracking-wider 
+text-slate-300\">Source-Verified Doctors</p>\n            </div>\n          </div>\n        </div>\n      
+</section>\n\n      {/* Call to Action Banner */}\n      <section className=\"bg-[#f0f5f3] py-16 border-t 
+border-slate-200\">\n        <div className=\"mx-auto max-w-5xl px-5 text-center sm:px-8\">\n          <h2 
+className=\"text-3xl font-bold text-ink sm:text-4xl\">\n            Need urgent guidance for hospital selection?\n     
+     </h2>\n          <p className=\"mx-auto mt-4 max-w-xl text-sm leading-relaxed text-slate-600\">\n            Use 
+our clinical decision-support engine to enter symptoms and vitals. We rank suitable hospitals based on specialty 
+match, bed availability, and waiting times.\n          </p>\n          <div className=\"mt-8 flex justify-center 
+gap-4\">\n            <Link\n              to=\"/assessment\"\n              className=\"inline-flex items-center 
+gap-2 rounded-xl bg-clinical-700 px-7 py-3.5 text-sm font-bold text-white shadow-md transition 
+hover:bg-clinical-800\"\n            >\n              Start Clinical Assessment \n            </Link>\n          
+</div>\n        </div>\n      </section>\n    </main>\n  );\n}\n","Description":"Redesign Landing page to prominently 
+showcase MediNexus AI clinical triage, waiting-time forecasting, and verified 
+doctors","Overwrite":true,"TargetFile":"c:\\Users\\Shrishti 
+kumari\\OneDrive\\Desktop\\medinexus-ai\\frontend\\src\\pages\\Landing.jsx","toolAction":"Writing 
+file","toolSummary":"Update Landing.jsx"}}]}
+  C:\Users\Shrishti kumari\.gemini\antigravity\brain\fe9a1ef4-cec6-45ab-aef0-9c191ff54e7b\.system_generated\logs\transc
+ript_full.jsonl:690:{"step_index":695,"source":"MODEL","type":"GENERIC","status":"DONE","created_at":"2026-10-07T16:19:
+55Z","content":"Created At: 2026-10-07T21:49:55+05:30\nCompleted At: 2026-10-07T21:49:56+05:30\nCreated file 
+file:///c:/Users/Shrishti%20kumari/OneDrive/Desktop/medinexus-ai/frontend/src/pages/Landing.jsx with requested 
+content.\nIf relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission."}
+  C:\Users\Shrishti kumari\.gemini\antigravity\brain\fe9a1ef4-cec6-45ab-aef0-9c191ff54e7b\.system_generated\logs\transc
+ript_full.jsonl:691:{"step_index":696,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-10-
+07T16:19:56Z","thinking":"Examining `PatientAssessment.jsx` as the central component for patient triage and 
+recommendations. The goal is a clinical triage interface; therefore, aiming for a design incorporating a clear header 
+and a structured card layout. The header will feature \"Patient Clinical Assessment & Decision Support\" and an \"AI 
+Urgency Analysis\" progress banner. The card structure will start with patient context 
+selection.\n\n\n","tool_calls":[{"name":"view_file","args":{"AbsolutePath":"c:\\Users\\Shrishti kumari\\OneDrive\\Deskt
+op\\medinexus-ai\\frontend\\src\\pages\\PatientAssessment.jsx","EndLine":250,"StartLine":160,"toolAction":"Viewing 
+PatientAssessment.jsx form layout","toolSummary":"View PatientAssessment.jsx 160-250"}}]}
+> C:\Users\Shrishti kumari\.gemini\antigravity\brain\fe9a1ef4-cec6-45ab-aef0-9c191ff54e7b\.system_generated\logs\transc
+ript_full.jsonl:774:{"step_index":780,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-10-
+07T17:03:54Z","tool_calls":[{"name":"run_command","args":{"CommandLine":"powershell -Command \"Select-String -Path 
+'C:\\Users\\Shrishti 
+kumari\\.gemini\\antigravity\\brain\\fe9a1ef4-cec6-45ab-aef0-9c191ff54e7b\\.system_generated\\logs\\transcript*.jsonl' 
+-Pattern 'TargetFile.*Landing.jsx' -Context 0,2\"","Cwd":"c:\\Users\\Shrishti 
+kumari\\OneDrive\\Desktop\\medinexus-ai","IsDaemon":false,"WaitMsBeforeAsync":5000,"toolAction":"Finding Landing.jsx 
+write step","toolSummary":"Find Landing.jsx write step"}}]}
+
+
+

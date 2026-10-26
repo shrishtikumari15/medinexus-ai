@@ -1,0 +1,4 @@
+Created At: 2026-10-07T21:49:55+05:30
+Completed At: 2026-10-07T21:49:56+05:30
+Created file file:///c:/Users/Shrishti%20kumari/OneDrive/Desktop/medinexus-ai/frontend/src/pages/Landing.jsx with requested content.
+If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
